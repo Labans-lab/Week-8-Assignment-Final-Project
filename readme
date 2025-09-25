@@ -1,0 +1,51 @@
+Clinic Booking System - Database Schema
+
+This project contains a complete MySQL relational database schema for a Clinic Booking System.
+It is designed to manage patients, doctors, appointments, billing, and related healthcare data.
+
+Features
+
+Relational Design: Implements Patients, Doctors, Appointments, Services, Prescriptions, and Invoices.
+
+Constraints: Includes PRIMARY KEY, FOREIGN KEY, UNIQUE, and CHECK constraints.
+
+Relationships: Supports
+
+One-to-One (e.g., Patient ↔ Medical Record),
+
+One-to-Many (e.g., Doctor → Appointments),
+
+Many-to-Many (e.g., Appointments ↔ Services).
+
+Security: Includes roles and users tables for access control.
+
+Deployment Instructions
+
+Install MySQL 8.0 or later.
+
+Open a terminal/command prompt.
+
+Run the schema file:
+
+mysql -u root -p < clinic_booking_system.sql
+
+
+(Optional) Edit the seed section of the SQL file to create initial roles, users, and sample appointments.
+
+Seed Data
+
+The schema includes optional INSERT statements for:
+
+Common appointment statuses (Scheduled, Checked-in, Completed, etc.).
+
+Default user roles (Admin, Receptionist, Doctor).
+
+A sample administrator account (update password_hash with a real secure hash before production).
+
+Usage Notes
+
+Ensure ENGINE=InnoDB is enabled to support foreign key constraints.
+
+The schema uses utf8mb4 for full Unicode support.
+
+Some CHECK constraints may be ignored in MySQL versions prior to 8.0.
